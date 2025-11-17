@@ -27,6 +27,18 @@ export default function Projects() {
             desc: "Space-themed personal portfolio with 3D visuals, AI worker integration, and multi-page React architecture.",
             url: "https://omerzahid.com",
             img: screenshot("https://omerzahid.com"),
+        },
+        {
+            title: "Bell Aviation / ROMISOFT LLC",
+            desc: "Bell Aviation Services has a rich history in Aircraft Maintenance, Repair, Operations, Worldwide Recovery, Avionics, Fleet Maintenance & Logistics.",
+            url: "https://mz9201ju.github.io/bell-aviation-romisoft/",
+            img: screenshot("https://mz9201ju.github.io/bell-aviation-romisoft/"),
+        },
+        {
+            title: "Deeba's Day Care",
+            desc: "At Deeba's Daycare, we offer exceptional home day care services, so the little ones are properly taken care of during your busy day.",
+            url: "https://mz9201ju.github.io/deebasDayCare/",
+            img: screenshot("https://mz9201ju.github.io/deebasDayCare/"),
         }
     ];
 

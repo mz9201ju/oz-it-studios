@@ -39,6 +39,12 @@
         transform 0.25s ease,
         box-shadow 0.25s ease,
         background 0.25s ease;
+
+    height: 420px; /* adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .projects__card:hover {
