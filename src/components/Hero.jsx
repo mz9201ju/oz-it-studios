@@ -28,12 +28,6 @@ export default function Hero() {
                     hardware.
                 </p>
 
-                <div className={styles.hero__pillsRow}>
-                    <span className={styles.hero__pill}>React · Spring Boot · Azure</span>
-                    <span className={styles.hero__pill}>End-to-end delivery</span>
-                    <span className={styles.hero__pill}>Hands-on architecture</span>
-                </div>
-
                 <div className={styles.hero__buttons}>
                     <button
                         type="button"
