@@ -1,0 +1,109 @@
+/* src/components/Hero.module.css */
+
+.hero {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero__title {
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.hero__titleLine {
+    display: block;
+}
+
+.hero__titleHighlight {
+    background: linear-gradient(120deg, #38bdf8, #a855f7, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.hero__subtitle {
+    font-size: 1.1rem;
+    opacity: 0.75;
+    max-width: 520px;
+    margin-bottom: 24px;
+}
+
+.hero__pillsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.hero__pill {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.75);
+    color: #e5e7eb;
+    font-size: 0.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero__buttonPrimary {
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 500;
+    background: #0f172a;
+    color: #f9fafb;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.hero__buttonPrimary:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.9);
+    opacity: 0.96;
+}
+
+.hero__buttonGhost {
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.96rem;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    background: rgba(15, 23, 42, 0.02);
+    color: #0f172a;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: background 0.2s ease, transform 0.15s ease, border 0.2s ease;
+}
+
+.hero__buttonGhost:hover {
+    background: rgba(148, 163, 184, 0.16);
+    border-color: rgba(148, 163, 184, 1);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero__title {
+        font-size: 2.4rem;
+    }
+}

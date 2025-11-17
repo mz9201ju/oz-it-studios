@@ -1,0 +1,147 @@
+/* ================================
+   🌐 OZ STUDIO — CENTER NAVBAR
+   ================================ */
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    height: 90px;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* CENTER EVERYTHING */
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 50px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.28);
+
+    transition: height 0.25s ease, padding 0.25s ease,
+        box-shadow 0.25s ease, top 0.25s ease;
+    z-index: 999;
+}
+
+/* CENTER WRAPPER FOR LOGO + TEXT */
+.centerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* ================================
+   🌈 LOGO ORB
+   ================================ */
+.navbar__logoOrb {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: conic-gradient(from 210deg,
+            #38bdf8,
+            #a855f7,
+            #22c55e,
+            #38bdf8);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.75);
+
+    transition: width 0.25s ease, height 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shrinkLogo {
+    width: 30px !important;
+    height: 30px !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.45);
+}
+
+/* ================================
+   ✨ BRAND TEXT
+   ================================ */
+.navbar__brandText {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: font-size 0.25s ease, opacity 0.25s ease;
+}
+
+.shrinkText {
+    font-size: 18px !important;
+    opacity: 0.9;
+}
+
+/* ================================
+   📉 SHRINK STATE
+   ================================ */
+.shrink {
+    height: 60px;
+    padding: 0 32px;
+    top: 10px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================
+   📱 MOBILE (CENTERED ONLY)
+   ================================ */
+@media (max-width: 768px) {
+    .navbar {
+        width: 54%;
+        height: 24px;
+        padding: 4px 8px;
+        top: 10px;
+
+        /* Still blurred + premium */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.6);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+    }
+
+    .centerWrapper {
+        gap: 6px;
+    }
+
+    .navbar__logoOrb {
+        width: 16px;
+        height: 16px;
+    }
+
+    .navbar__brandText {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+    }
+
+    .shrink {
+        height: 24px;
+        top: 8px;
+        padding: 2px 6px;
+    }
+
+    .shrinkLogo {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .shrinkText {
+        font-size: 11px !important;
+    }
+}
+
+
+/* ================================
+   🔥 REMOVE LINKS COMPLETELY
+   ================================ */
+.navbar__links,
+.navbar__link {
+    display: none !important;
+}

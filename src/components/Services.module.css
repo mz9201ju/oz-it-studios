@@ -1,0 +1,41 @@
+/* src/components/Services.module.css */
+
+.services {
+    margin-top: 80px;
+}
+
+.services__title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.services__subtitle {
+    opacity: 0.75;
+    margin-bottom: 28px;
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.services__card {
+    padding: 22px 20px;
+    border-radius: 24px;
+    background: rgba(248, 250, 252, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.28);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.services__cardTitle {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.services__cardText {
+    opacity: 0.78;
+    font-size: 0.9rem;
+}
