@@ -44,6 +44,13 @@ export default function Hero() {
                     >
                         View Projects
                     </button>
+                    <button
+                        type="button"
+                        className={styles.hero__buttonGhost}
+                        onClick={() => scrollToSection("contact")}
+                    >
+                        Contact OZ
+                    </button>
                 </div>
             </AnimatedReveal>
 
