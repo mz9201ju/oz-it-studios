@@ -53,7 +53,7 @@ export default function SocialFooter() {
             </div>
 
             <p className="copyright">
-                © {new Date().getFullYear()} OZ · IT STUDIO — Built by Omer Zahid
+                © {new Date().getFullYear()} OZ · IT STUDIOS — Built by Omer Zahid
             </p>
         </footer>
     );

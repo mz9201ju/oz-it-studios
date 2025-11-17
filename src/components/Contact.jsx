@@ -144,10 +144,6 @@ export default function Contact() {
 
                     {/* STATUS */}
                     {status && <p className={styles.contact__status}>{status}</p>}
-
-                    <p className={styles.contact__footer}>
-                        © {new Date().getFullYear()} Omer Zahid — All Rights Reserved
-                    </p>
                 </div>
             </AnimatedReveal>
         </section>
