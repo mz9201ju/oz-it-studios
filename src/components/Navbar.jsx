@@ -18,7 +18,7 @@ export default function Navbar() {
             <div className={styles.centerWrapper}>
                 <div className={`${styles.navbar__logoOrb} ${isShrunk ? styles.shrinkLogo : ""}`} />
                 <div className={`${styles.navbar__brandText} ${isShrunk ? styles.shrinkText : ""}`}>
-                    OZ · IT STUDIO
+                    OZ · IT STUDIOS
                 </div>
             </div>
         </nav>

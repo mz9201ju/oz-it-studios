@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import SocialFooter from "./components/SocialFooter";
 
 import styles from "./App.module.css";
 
@@ -17,6 +18,7 @@ export default function App() {
         <Services />
         <Projects />
         <Contact />
+        <SocialFooter />
       </div>
     </div>
   );
