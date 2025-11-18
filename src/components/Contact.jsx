@@ -4,7 +4,6 @@ import styles from "./Contact.module.css";
 import AnimatedReveal from "./AnimatedReveal";
 
 export default function Contact() {
-
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -16,10 +15,13 @@ export default function Contact() {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState("");
 
+    // Simple email validation
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
-
-        // Remove error dynamically once user types
         setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
     };
 
@@ -28,20 +30,19 @@ export default function Contact() {
 
         if (!form.name.trim()) newErrors.name = "Required";
         if (!form.email.trim()) newErrors.email = "Required";
+        else if (!isValidEmail(form.email)) newErrors.email = "Invalid email";
+
         if (!form.message.trim()) newErrors.message = "Required";
 
         setErrors(newErrors);
-
-        // If errors exist → block submission
         return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = async () => {
         setStatus("");
 
-        // 🔥 VALIDATION first
         if (!validateForm()) {
-            setStatus("Please fill in all required fields ❗");
+            setStatus("Please fix the errors ❗");
             return;
         }
 
@@ -51,14 +52,19 @@ export default function Contact() {
             const res = await fetch("https://oz-studio-worker.omer-mnsu.workers.dev/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form)
+                body: JSON.stringify(form),
             });
 
             if (!res.ok) throw new Error("Request failed");
 
+            // SUCCESS UI
             setStatus("Message sent successfully 🚀");
             setForm({ name: "", email: "", company: "", message: "" });
             setErrors({});
+
+            // Auto-clear success message after 3 sec
+            setTimeout(() => setStatus(""), 3000);
+
         } catch (err) {
             console.error(err);
             setStatus("Failed to send message. Try again.");
@@ -118,7 +124,7 @@ export default function Contact() {
 
                     </div>
 
-                    {/* MESSAGE FIELD */}
+                    {/* MESSAGE */}
                     <div className={styles.contact__fieldFull}>
                         <textarea
                             name="message"
@@ -130,7 +136,7 @@ export default function Contact() {
                         {errors.message && <p className={styles.errorText}>{errors.message}</p>}
                     </div>
 
-                    {/* BUTTON */}
+                    {/* BUTTONS */}
                     <div className={styles.contact__buttonWrap}>
                         <button
                             type="button"
@@ -141,6 +147,7 @@ export default function Contact() {
                             {loading ? "Sending..." : "Send Message"}
                         </button>
                     </div>
+
                     <div className={styles.contact__buttonWrap}>
                         <button
                             type="button"
@@ -150,6 +157,7 @@ export default function Contact() {
                             Call OZ
                         </button>
                     </div>
+
                     {/* STATUS */}
                     {status && <p className={styles.contact__status}>{status}</p>}
                 </div>
