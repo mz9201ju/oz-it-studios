@@ -156,3 +156,29 @@
     font-size: 0.75rem;
     margin-top: 4px;
 }
+
+/* ======================================================
+   🔥 FIRE ANIMATION OVER CARD
+   ====================================================== */
+.fireAnimation {
+    position: relative;
+    overflow: hidden;
+}
+
+.fireAnimation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./assets/fire.gif") center/cover no-repeat;
+    opacity: 0.45;
+    mix-blend-mode: screen;
+    animation: fireFlicker 1.8s infinite ease-in-out;
+    pointer-events: none;
+}
+
+/* Flicker effect */
+@keyframes fireFlicker {
+    0% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(1.03); }
+    100% { opacity: 0.40; transform: scale(1); }
+}

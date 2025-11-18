@@ -10,6 +10,7 @@ export default function Contact() {
         company: "",
         message: ""
     });
+    const [fire, setFire] = useState(false);
 
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -61,9 +62,14 @@ export default function Contact() {
             setStatus("Message sent successfully 🚀");
             setForm({ name: "", email: "", company: "", message: "" });
             setErrors({});
+            setFire(true); // enable fire
 
-            // Auto-clear success message after 3 sec
-            setTimeout(() => setStatus(""), 3000);
+            // Auto-clear success + fire effect after 2.5 sec
+            setTimeout(() => {
+                setStatus("");
+                setFire(false);
+            }, 2500);
+
 
         } catch (err) {
             console.error(err);
@@ -85,8 +91,7 @@ export default function Contact() {
             </AnimatedReveal>
 
             <AnimatedReveal variant="float" delay={0.12}>
-                <div className={styles.contact__card}>
-
+                <div className={`${styles.contact__card} ${status && status.includes("successfully") ? styles.fireAnimation : ""}`}>
                     {/* INPUT ROW */}
                     <div className={styles.contact__row}>
 
