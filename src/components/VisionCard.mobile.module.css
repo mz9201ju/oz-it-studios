@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+  .visionCard {
+    padding: 33px 0 10px 10px;
+    max-height: none;
+    background: linear-gradient(120deg, #38bdf8, #a855f7, #22c55e);
+    backdrop-filter: blur(20px);
+  }
+
+  .visionCard__meta {
+    margin-top: 6px;
+    font-size: 1rem;
+  }
+
+  .visionCard__title {
+    font-size: 1.4rem;
+    margin-top: 4px;
+  }
+
+  .visionCard__text {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+}

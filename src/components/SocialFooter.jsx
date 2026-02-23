@@ -1,50 +1,48 @@
-// src/components/SocialFooter.jsx
-import React from "react";
-import "./SocialFooter.css"; // we will create this file next
+import {
+    FaFacebookF,
+    FaGithub,
+    FaInstagram,
+    FaLinkedinIn,
+    FaYoutube,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { BUY_COFFEE_LINK, SOCIAL_LINKS } from "../constants/social";
+import styles from "./SocialFooter.module.css";
+import mobileStyles from "./SocialFooter.mobile.module.css";
+
+const ICON_BY_KEY = {
+    github: FaGithub,
+    linkedin: FaLinkedinIn,
+    youtube: FaYoutube,
+    facebook: FaFacebookF,
+    email: MdEmail,
+    instagram: FaInstagram,
+};
 
 export default function SocialFooter() {
-    const links = {
-        github: "https://github.com/mz9201ju",
-        linkedin: "https://www.linkedin.com/in/omer-zahid-developer/",
-        youtube: "https://www.youtube.com/@AbuvYousuf",
-        facebook: "https://www.facebook.com/abuyousufdeveloper",
-        email: "info@omerzahid.com",
-        instagram: "https://instagram.com/abuyousufdeveloper",
-        coffee: "https://www.buymeacoffee.com/omerzahid",
-    };
-
     return (
-        <footer className="social-footer">
-            <div className="social-links">
+        <footer className={styles.socialFooter}>
+            <div className={`${styles.socialLinks} ${mobileStyles.socialLinks}`}>
+                {SOCIAL_LINKS.map((link) => {
+                    const Icon = ICON_BY_KEY[link.key];
 
-                <a href={links.github} className="social-button github" target="_blank">
-                    <i className="fa-brands fa-github"></i>
-                </a>
-
-                <a href={links.linkedin} className="social-button linkedin" target="_blank">
-                    <i className="fa-brands fa-linkedin"></i>
-                </a>
-
-                <a href={links.youtube} className="social-button youtube" target="_blank">
-                    <i className="fa-brands fa-youtube"></i>
-                </a>
-
-                <a href={links.facebook} className="social-button facebook" target="_blank">
-                    <i className="fa-brands fa-facebook"></i>
-                </a>
-
-                <a href={`mailto:${links.email}`} className="social-button email">
-                    <i className="fa-solid fa-envelope"></i>
-                </a>
-
-                <a href={links.instagram} className="social-button instagram" target="_blank">
-                    <i className="fa-brands fa-instagram"></i>
-                </a>
-
+                    return (
+                        <a
+                            key={link.key}
+                            href={link.href}
+                            className={`${styles.socialButton} ${mobileStyles.socialButton} ${styles[link.key]}`}
+                            target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                            rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                            aria-label={link.label}
+                        >
+                            <Icon />
+                        </a>
+                    );
+                })}
             </div>
 
-            <div className="buy-coffee-container">
-                <a href={links.coffee} target="_blank" className="buy-coffee-btn">
+            <div className={`${styles.buyCoffeeContainer} ${mobileStyles.buyCoffeeContainer}`}>
+                <a href={BUY_COFFEE_LINK} target="_blank" rel="noreferrer">
                     <img
                         src="https://cdn.buymeacoffee.com/buttons/default-orange.png"
                         alt="Buy Me a Coffee"
@@ -52,7 +50,7 @@ export default function SocialFooter() {
                 </a>
             </div>
 
-            <p className="copyright">
+            <p className={styles.copyright}>
                 © {new Date().getFullYear()} OZ · IT STUDIOS — Built by Omer Zahid
             </p>
         </footer>

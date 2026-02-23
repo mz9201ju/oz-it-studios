@@ -1,9 +1,18 @@
-// src/components/VisionCard.jsx
-import React, { useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./VisionCard.module.css";
+import mobileStyles from "./VisionCard.mobile.module.css";
 
 export default function VisionCard() {
-    const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
+    const cardRef = useRef(null);
+    const frameRef = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            if (frameRef.current) {
+                cancelAnimationFrame(frameRef.current);
+            }
+        };
+    }, []);
 
     const handleMove = (e) => {
         const card = e.currentTarget;
@@ -21,19 +30,29 @@ export default function VisionCard() {
         const rotateY = deltaX * 10;
         const rotateX = -deltaY * 10;
 
-        setTilt({ rotateX, rotateY });
+        if (frameRef.current) {
+            cancelAnimationFrame(frameRef.current);
+        }
+
+        frameRef.current = requestAnimationFrame(() => {
+            card.style.setProperty("--rotate-x", `${rotateX}deg`);
+            card.style.setProperty("--rotate-y", `${rotateY}deg`);
+        });
     };
 
     const resetTilt = () => {
-        setTilt({ rotateX: 0, rotateY: 0 });
+        if (!cardRef.current) {
+            return;
+        }
+
+        cardRef.current.style.setProperty("--rotate-x", "0deg");
+        cardRef.current.style.setProperty("--rotate-y", "0deg");
     };
 
     return (
         <div
-            className={styles.visionCard}
-            style={{
-                transform: `perspective(900px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
-            }}
+            ref={cardRef}
+            className={`${styles.visionCard} ${mobileStyles.visionCard}`}
             onMouseMove={handleMove}
             onMouseLeave={resetTilt}
         >
@@ -41,13 +60,13 @@ export default function VisionCard() {
                 Live system snapshot
             </div>
 
-            <div className={styles.visionCard__meta}>
+            <div className={`${styles.visionCard__meta} ${mobileStyles.visionCard__meta}`}>
                 • Active environments: <strong>Prod · Staging</strong>
             </div>
 
-            <h3 className={styles.visionCard__title}>Delivery Profile</h3>
+            <h3 className={`${styles.visionCard__title} ${mobileStyles.visionCard__title}`}>Delivery Profile</h3>
 
-            <p className={styles.visionCard__text}>
+            <p className={`${styles.visionCard__text} ${mobileStyles.visionCard__text}`}>
                 Think of this as your control center: one engineer owning design,
                 build, and rollout — not a handoff maze.
                 <br />

@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.hero__column {
+    width: 100%;
+}
+
 .hero__title {
     font-size: 4rem;
     line-height: 1.1;
@@ -33,15 +37,6 @@
     opacity: 0.75;
     max-width: 520px;
     margin-bottom: 24px;
-}
-
-.hero__pill {
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: rgba(15, 23, 42, 0.75);
-    color: #e5e7eb;
-    font-size: 0.8rem;
-    border: 1px solid rgba(148, 163, 184, 0.7);
 }
 
 .hero__buttons {
@@ -86,17 +81,4 @@
     background: rgba(148, 163, 184, 0.16);
     border-color: rgba(148, 163, 184, 1);
     transform: translateY(-1px);
-}
-
-@media (max-width: 768px) {
-    .hero {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .hero__title {
-        font-size: 2.4rem;
-    }
 }

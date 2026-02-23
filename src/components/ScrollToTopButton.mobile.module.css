@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+  .scrollToTopButton {
+    right: 14px;
+    bottom: 18px;
+    height: 46px;
+    width: 46px;
+  }
+
+  .scrollToTopIcon {
+    font-size: 16px;
+  }
+}

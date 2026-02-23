@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+  .socialLinks {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .socialButton {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .buyCoffeeContainer img {
+    height: 38px;
+  }
+}

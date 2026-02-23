@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .projects {
+    margin-top: 40px;
+  }
+
+  .projects__grid {
+    gap: 18px;
+  }
+
+  .projects__card {
+    padding: 20px 18px;
+    height: auto;
+    min-height: 360px;
+  }
+
+  .projects__imageWrap {
+    height: 160px;
+  }
+}

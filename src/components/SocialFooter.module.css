@@ -1,0 +1,80 @@
+.socialFooter {
+  width: 100%;
+  padding: 40px 0 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.socialButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.socialButton:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+.github {
+  background: #333;
+}
+
+.linkedin {
+  background: #0a66c2;
+}
+
+.youtube {
+  background: #ff0000;
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+.email {
+  background: #d44638;
+}
+
+.instagram {
+  background: radial-gradient(circle at 30% 30%,
+      #fdf497 10%,
+      #fbb034 40%,
+      #dd2a7b 60%,
+      #8134af 80%,
+      #515bd4 100%);
+}
+
+.buyCoffeeContainer img {
+  height: 42px;
+  margin-top: 10px;
+  transition: transform 0.25s ease;
+  border-radius: 14px;
+}
+
+.buyCoffeeContainer img:hover {
+  transform: scale(1.08);
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  opacity: 0.85;
+}

@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+  .contact {
+    margin-top: 40px;
+  }
+
+  .contact__title {
+    font-size: 1.7rem;
+  }
+
+  .contact__card {
+    padding: 24px 0px;
+    gap: 14px;
+  }
+
+  .contact__row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact__input {
+    padding: 14px 12px;
+    font-size: 0.95rem;
+    border-radius: 14px;
+  }
+
+  .contact__textarea {
+    min-height: 130px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .contact__button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}

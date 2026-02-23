@@ -1,0 +1,33 @@
+.scrollToTopButton {
+  position: fixed;
+  bottom: 32px;
+  right: 26px;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #38bdf8, #a855f7, #22c55e);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  z-index: 9999;
+}
+
+.scrollToTopButton:hover {
+  transform: scale(1.18);
+}
+
+.scrollToTopButtonHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.92);
+}
+
+.scrollToTopIcon {
+  color: #fff;
+  font-size: 20px;
+}

@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  .page {
+    padding: 18px 12px 60px;
+  }
+
+  .maxWidth {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 14px 10px 50px;
+  }
+}

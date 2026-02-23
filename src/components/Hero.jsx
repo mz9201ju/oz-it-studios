@@ -1,20 +1,20 @@
 // src/components/Hero.jsx
-import React from "react";
 import styles from "./Hero.module.css";
+import mobileStyles from "./Hero.mobile.module.css";
 import VisionCard from "./VisionCard";
 import { scrollToSection } from "../utils/scrollToSection";
 import AnimatedReveal from "./AnimatedReveal";
 
 export default function Hero() {
     return (
-        <main className={styles.hero}>
+        <main className={`${styles.hero} ${mobileStyles.hero}`}>
             {/* LEFT: Text block */}
             <AnimatedReveal
                 variant="subtle"
                 delay={0.05}
-                style={{ width: "100%" }}
+                className={styles.hero__column}
             >
-                <h1 className={styles.hero__title}>
+                <h1 className={`${styles.hero__title} ${mobileStyles.hero__title}`}>
                     Vision-level
                     <span className={styles.hero__titleLine}>
                         <span className={styles.hero__titleHighlight}>IT delivery</span>
@@ -28,10 +28,10 @@ export default function Hero() {
                     hardware.
                 </p>
 
-                <div className={styles.hero__buttons}>
+                <div className={`${styles.hero__buttons} ${mobileStyles.hero__buttons}`}>
                     <button
                         type="button"
-                        className={styles.hero__buttonPrimary}
+                        className={`${styles.hero__buttonPrimary} ${mobileStyles.hero__buttonPrimary}`}
                         onClick={() => scrollToSection("services")}
                     >
                         View Services
@@ -39,14 +39,14 @@ export default function Hero() {
 
                     <button
                         type="button"
-                        className={styles.hero__buttonGhost}
+                        className={`${styles.hero__buttonGhost} ${mobileStyles.hero__buttonGhost}`}
                         onClick={() => scrollToSection("projects")}
                     >
                         View Projects
                     </button>
                     <button
                         type="button"
-                        className={styles.hero__buttonGhost}
+                        className={`${styles.hero__buttonGhost} ${mobileStyles.hero__buttonGhost}`}
                         onClick={() => scrollToSection("contact")}
                     >
                         Contact OZ
@@ -58,7 +58,7 @@ export default function Hero() {
             <AnimatedReveal
                 variant="float"
                 delay={0.18}
-                style={{ width: "100%" }}
+                className={styles.hero__column}
             >
                 <VisionCard />
             </AnimatedReveal>

@@ -1,5 +1,3 @@
-import React from "react";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -9,11 +7,12 @@ import SocialFooter from "./components/SocialFooter";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
 import styles from "./App.module.css";
+import mobileStyles from "./App.mobile.module.css";
 
 export default function App() {
   return (
-    <div className={styles.page}>
-      <div className={styles.maxWidth}>
+    <div className={`${styles.page} ${mobileStyles.page}`}>
+      <div className={`${styles.maxWidth} ${mobileStyles.maxWidth}`}>
         <ScrollToTopButton />
         <Navbar />
         <Hero />

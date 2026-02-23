@@ -7,6 +7,9 @@
    - Perfect readability for all text
    --------------------------------------------------- */
 .visionCard {
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+
     position: relative;
     border-radius: 32px;
     padding: 24px 22px;
@@ -30,7 +33,8 @@
     width: 100%;
     max-height: 340px;
 
-    transition: transform 0.3s ease-out;
+    transform: perspective(900px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+    transition: transform 0.15s ease-out;
     will-change: transform;
 }
 
@@ -90,37 +94,4 @@
     line-height: 1.45;
     font-size: 0.92rem;
     color: #e2e8f0;
-}
-
-/* ---------------------------------------------------
-   Mobile adjustments
-   --------------------------------------------------- */
-@media (max-width: 768px) {
-    .visionCard {
-        padding: 33px 0px 10px 10px;
-        max-height: none;
-    }
-
-    .visionCard__meta {
-        margin-top: 6px;
-        font-size: 1rem;
-    }
-
-    .visionCard__title {
-        font-size: 1.4rem;
-        margin-top: 4px;
-    }
-
-    .visionCard__text {
-        font-size: 1rem;
-        line-height: 1.55;
-    }
-
-    .visionCard {
-        padding: 33px 0px 10px 10px;
-        max-height: none;
-
-        background: linear-gradient(120deg, #38bdf8, #a855f7, #22c55e);
-        backdrop-filter: blur(20px);
-    }
 }

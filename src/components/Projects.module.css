@@ -25,6 +25,8 @@
     padding: 24px 22px;
     border-radius: 26px;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 
     background: rgba(248, 250, 252, 0.8);
     border: 1px solid rgba(148, 163, 184, 0.55);
@@ -40,11 +42,16 @@
         box-shadow 0.25s ease,
         background 0.25s ease;
 
-    height: 420px; /* adjust as needed */
+    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+}
+
+.projects__card:focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: 3px;
 }
 
 .projects__card:hover {
@@ -80,38 +87,26 @@
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .projects {
-        margin-top: 40px;
-    }
-
-    .projects__card {
-        padding: 20px 18px;
-    }
-}
-
 .projects__imageWrap {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  border-radius: 18px 18px 0 0;
-  background: #f3f4f6;
-
-  /* FIX: prevents overflow */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 18px 18px 0 0;
+        background: #f3f4f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 
 .projects__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* 🔥 ensures perfect cropping */
-  object-position: top;     /* 🔥 shows top of site (hero section) */
-  transition: transform 0.45s ease, opacity 0.3s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.45s ease, opacity 0.3s ease;
 }
 
 .projects__card:hover .projects__image {
-  transform: scale(1.05);
-  opacity: 0.95;
+        transform: scale(1.05);
+        opacity: 0.95;
 }

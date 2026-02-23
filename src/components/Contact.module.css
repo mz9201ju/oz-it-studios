@@ -1,184 +1,156 @@
-/* ===============================
-   GLASS CARD
-   =============================== */
+.contact {
+  margin-top: 80px;
+}
+
+.contact__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact__subtitle {
+  opacity: 0.75;
+  margin-bottom: 32px;
+  max-width: 700px;
+}
+
 .contact__card {
-    padding: 40px 30px;
-    border-radius: 28px;
-
-    background: rgba(240, 242, 248, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    backdrop-filter: blur(32px) brightness(1.07);
-    -webkit-backdrop-filter: blur(32px) brightness(1.07);
-
-    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
-
-    width: 100%;
-    max-width: 880px;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+  padding: 40px 30px;
+  border-radius: 28px;
+  background: rgba(240, 242, 248, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(32px) brightness(1.07);
+  -webkit-backdrop-filter: blur(32px) brightness(1.07);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
-/* ===============================
-   INPUT ROW (DESKTOP)
-   =============================== */
 .contact__row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
-/* ===============================
-   INPUT FIELDS (DESKTOP)
-   =============================== */
+.contact__field,
+.contact__fieldFull {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .contact__input {
-    width: 90%;
-    padding: 16px 14px;
-    /* ← FIX: add horizontal padding */
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-
-    background: rgba(255, 255, 255, 0.38);
-    color: #0f172a;
-    font-size: 1rem;
-
-    transition: all 0.2s ease-out;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 16px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.38);
+  color: #0f172a;
+  font-size: 1rem;
+  transition: all 0.2s ease-out;
 }
 
-.contact__input:focus {
-    border-color: #38bdf8;
-    background: rgba(255, 255, 255, 0.52);
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.55);
-}
-
-/* ===============================
-   TEXTAREA (DESKTOP)
-   =============================== */
-.contact__textarea {
-    width: 90%;
-    min-height: 160px;
-    padding: 14px;
-    /* ← FIX: needed padding */
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-
-    background: rgba(255, 255, 255, 0.36);
-    color: #0f172a;
-    font-size: 1rem;
-
-    resize: none;
-    transition: all 0.2s ease-out;
-}
-
+.contact__input:focus,
 .contact__textarea:focus {
-    border-color: #38bdf8;
-    background: rgba(255, 255, 255, 0.50);
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.55);
+  outline: none;
+  border-color: #38bdf8;
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.55);
 }
 
-/* ===============================
-   BUTTON
-   =============================== */
+.contact__textarea {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  min-height: 160px;
+  padding: 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.36);
+  color: #0f172a;
+  font-size: 1rem;
+  resize: none;
+  transition: all 0.2s ease-out;
+}
+
+.contact__buttonWrap {
+  display: flex;
+}
+
 .contact__button {
-    padding: 16px 36px;
-    border-radius: 50px;
-
-    background: #0f172a;
-    color: #fff;
-    font-size: 1rem;
-
-    border: none;
-    cursor: pointer;
-    width: -webkit-fill-available;
-    margin: 0 auto;
-
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 16px 36px;
+  border-radius: 50px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact__button:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
 }
 
-/* ===============================
-   MOBILE ONLY (FULL OVERRIDE)
-   =============================== */
-@media (max-width: 768px) {
-
-    /* card */
-    .contact__card {
-        padding: 24px 4px;
-        gap: 14px;
-    }
-
-    /* row becomes one column */
-    .contact__row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    /* inputs on mobile */
-    .contact__input {
-        padding: 14px 12px;
-        /* ← perfect mobile padding */
-        font-size: 0.95rem;
-        border-radius: 14px;
-    }
-
-    /* textarea on mobile */
-    .contact__textarea {
-        min-height: 130px;
-        padding: 12px;
-        border-radius: 16px;
-    }
-
-    /* button full width */
-    .contact__button {
-        width: 100%;
-        padding: 14px;
-        font-size: 1rem;
-    }
+.contact__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-/* 🔥 Red Border When Error */
+.contact__status {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 .errorInput {
-    border-color: #ef4444 !important;
-    background: rgba(255, 235, 235, 0.5) !important;
+  border-color: #ef4444 !important;
+  background: rgba(255, 235, 235, 0.5) !important;
 }
 
-/* 🔥 Small Red Error Text */
 .errorText {
-    color: #ef4444;
-    font-size: 0.75rem;
-    margin-top: 4px;
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
 }
 
-/* ======================================================
-   🔥 FIRE ANIMATION OVER CARD
-   ====================================================== */
 .fireAnimation {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .fireAnimation::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("./assets/fire.gif") center/cover no-repeat;
-    opacity: 0.45;
-    mix-blend-mode: screen;
-    animation: fireFlicker 1.8s infinite ease-in-out;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./assets/fire.gif") center/cover no-repeat;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  animation: fireFlicker 1.8s infinite ease-in-out;
+  pointer-events: none;
 }
 
-/* Flicker effect */
 @keyframes fireFlicker {
-    0% { opacity: 0.35; transform: scale(1); }
-    50% { opacity: 0.55; transform: scale(1.03); }
-    100% { opacity: 0.40; transform: scale(1); }
+  0% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.03);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
 }
