@@ -14,7 +14,7 @@ export const PROJECTS = [
   },
   {
     title: "Rashida Little Champs DayCare",
-    desc: "Little Champs DayCare is a Day Care Center & Head Start Center located in Bellevue, WA that services all of Bellevue & the surrounding areas. We offer Child Care, Toddler Care, Home Day Care, Day Care Services, Child Care Services, Child Education, Child Care Development, Well Mannered Services, Family Day Care, Home Child Care, 24/7 Day Care Service & more. Our staff are highly trained to care for and help develop your kids' creative, physical, and analytical skills. If you are looking for a Fun Play Day Care, Preschool or After School Program, then Little Champs DayCare is the smart choice. We will treat your children as if they are our own. Call us today to inquire about our programs and to schedule a tour of our facility.",
+    desc: "Little Champs DayCare is a Day Care Center & Head Start Center located in Bellevue, WA that services all of Bellevue & the surrounding areas. We offer Child Care, Toddler Care, Home Day Care, Day Care Services, Child Care Services, Child Education, Child Care Development, Well Mannered Services, Family Day Care, Home Child Care, 24/7 Day Care Service & more.",
     url: "https://mz9201ju.github.io/RashidaLittleChampsDayCare/",
   },
   {
