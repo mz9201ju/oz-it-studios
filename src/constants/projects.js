@@ -17,11 +17,11 @@ export const PROJECTS = [
     desc: "We offer Child Care, Toddler Care, Home Day Care, Day Care Services, Child Care Services, Child Education, Child Care Development, Well Mannered Services, Family Day Care, Home Child Care, 24/7 Day Care Service & more.",
     url: "https://mz9201ju.github.io/RashidaLittleChampsDayCare/",
   },
-  {
-    title: "Skylight KSA",
-    desc: "Enterprise-level construction & engineering website with multi-service structure, SEO automation, and cloud deployment.",
-    url: "https://mz9201ju.github.io/skylight-ksa",
-  },
+  // {
+  //   title: "Skylight KSA",
+  //   desc: "Enterprise-level construction & engineering website with multi-service structure, SEO automation, and cloud deployment.",
+  //   url: "https://mz9201ju.github.io/skylight-ksa",
+  // },
   {
     title: "Omer Portfolio",
     desc: "Space-themed personal portfolio with 3D visuals, AI worker integration, and multi-page React architecture.",
@@ -37,11 +37,11 @@ export const PROJECTS = [
     desc: "At Deeba's Daycare, we offer exceptional home day care services, so the little ones are properly taken care of during your busy day.",
     url: "https://mz9201ju.github.io/deebasDayCare/",
   },
-  {
-    title: "ELIA Barber Shop",
-    desc: "A local Bellevue barber shop website I built to help the business grow its online visibility.",
-    url: "https://mz9201ju.github.io/ELIA_BarberShop_WebSite/",
-  },
+  // {
+  //   title: "ELIA Barber Shop",
+  //   desc: "A local Bellevue barber shop website I built to help the business grow its online visibility.",
+  //   url: "https://mz9201ju.github.io/ELIA_BarberShop_WebSite/",
+  // },
 ].map((project) => ({
   ...project,
   img: screenshot(project.url),
